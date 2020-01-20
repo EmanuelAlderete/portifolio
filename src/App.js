@@ -1,10 +1,13 @@
 import React from 'react';
-import { HomeSection, ResetCSS, FundationsSection, BounceArrow, StyledLink } from './styles';
+import { HomeSection, ResetCSS, FundationsSection, TechsSection, BounceArrow, StyledLink } from './styles';
 
 import cloudImg from './images/cloud.svg';
 import fastImg from './images/fast.svg';
 import graphImg from './images/graph.svg';
 import arrow from './images/white-arrow.svg';
+import nodeImg from './images/node.svg';
+import reactImg from './images/react.svg';
+import mongoImg from './images/mongo.svg';
 
 function App() {
   return (
@@ -27,8 +30,8 @@ function App() {
             Você pode conferir um pouco sobre cada princípio que será implementado em seu projeto.
                 </p>
           <div className="buttons">
-            <StyledLink to="techs">TECNOLOGIAS</StyledLink>
-            <StyledLink to="projects">PROJETOS</StyledLink>
+            <StyledLink to="techs" spy={true} smooth={true} offset={50} delay={150} duration={1000}>TECNOLOGIAS</StyledLink>
+            <StyledLink to="projects" spy={true} smooth={true} offset={50} delay={150} duration={1000}>PROJETOS</StyledLink>
           </div>
         </div>
         <div className="main">
@@ -59,6 +62,25 @@ function App() {
           </div>
         </div>
       </FundationsSection>
+      <TechsSection name="techs" >
+        <div className="main title"> 
+          <h1>TECNOLOGIAS</h1>
+        </div>
+        <div className="main">
+          <div className="icons">
+            <img src={reactImg} alt="ReactJS" />
+            <h4>ReactJS</h4>
+          </div>
+          <div className="icons">
+            <img src={nodeImg} alt="NodeJS" />
+            <h4>NodeJS</h4>
+          </div>
+          <div className="icons">
+            <img src={mongoImg} alt="MongoDB" />
+            <h4>MongoDB</h4>
+          </div>
+        </div>
+      </TechsSection>
     </div>
   );
 }

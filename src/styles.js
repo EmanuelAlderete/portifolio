@@ -2,6 +2,8 @@ import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { flipInY, bounce } from 'react-animations';
 import { Link } from "react-scroll";
 
+import oceanImg from './images/ocean.jpg';
+
 const flixInXAnimation = keyframes`${flipInY}`;
 const bounceAnimation = keyframes`${bounce}`;
 
@@ -141,5 +143,58 @@ export const BounceArrow = styled(Link)`
 
     img {
         height: 50px;
+    }
+`;
+
+export const TechsSection = styled.section`
+    height: 95vh;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+
+    div.main {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+        flex: 1 1 50%;
+    }
+
+    div.title {
+        min-width: 250px;
+        background-image: url(${oceanImg});
+        color: #FFF;
+        color: #FFFFFF;
+        text-shadow: 8px 8px 4px #474747;
+    }
+
+    div.icons {
+        display: flex;
+        align-items: center;
+        height: 150px;
+        padding: 30px;
+    }
+
+    div.icons img {
+        width: 100px;
+        height: 100px;
+        margin-right: 25px;
+    }
+
+    @media (max-width: 504px){
+        height: 100vh;
+
+        div.main {
+            height: 80%
+        }
+
+        div.title {
+            height: 20%;
+        }
     }
 `;
