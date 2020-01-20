@@ -1,11 +1,12 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
-import { flipInY, bounce } from 'react-animations';
+import { flipInY, bounce, flash } from 'react-animations';
 import { Link } from "react-scroll";
 
 import oceanImg from './images/ocean.jpg';
 
 const flixInXAnimation = keyframes`${flipInY}`;
 const bounceAnimation = keyframes`${bounce}`;
+const flashAnimation = keyframes`${flash};`
 
 export const ResetCSS = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
@@ -173,6 +174,10 @@ export const TechsSection = styled.section`
         text-shadow: 8px 8px 4px #474747;
     }
 
+    div.title:hover > h1 {
+        animation: 3s ${flashAnimation};
+    }
+
     div.icons {
         display: flex;
         align-items: center;
@@ -184,6 +189,10 @@ export const TechsSection = styled.section`
         width: 100px;
         height: 100px;
         margin-right: 25px;
+    }
+
+    div.icons:hover > img {
+        animation: 2s ${bounceAnimation};
     }
 
     @media (max-width: 504px){
