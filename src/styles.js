@@ -51,22 +51,23 @@ export const HomeSection = styled.section`
 `;
 
 export const FundationsSection = styled.section`
-    height: 95vh;
-    max-width: 100%;
+    height: 90vh;
     margin: 0 auto;
     display: flex;
     flex-flow: row-reverse wrap;
     align-items: center;
+    box-sizing: border-box;
+  
 
     div.main { 
-        flex: 1 1 50%; 
-        padding: 20px; 
+        flex: 1 1 60%; 
+        padding: 10px;
     }
 
     div.icons { 
+        padding: 15px 0;
         display: flex; 
         align-items: center; 
-        margin: 10px 0; 
     }
 
     div.icons div {
@@ -99,17 +100,57 @@ export const FundationsSection = styled.section`
         justify-content: center;
     }
 
-    @media (min-width: 300px){
-        div.main {
-            min-width: 300px;
-        }
-    }
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) { }
 
-    @media (max-width: 300px) {
-        div.main {
-            min-width: 200px;
+    /* // Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) { 
+        div.main { 
+            flex: 1 1 50%; 
         }
-    }
+
+        div.icons {
+            padding: 20px 0;
+        }
+
+        img { 
+            width: 150px; 
+        }
+
+        div.icons  p {
+            font-size: .9em;
+        }
+
+        h1 { 
+            font-weight: lighter;
+            font-size: 5em; 
+        }
+     }
+     
+    /* // Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) { 
+        padding: 0 100px;
+
+        h1 { 
+            font-weight: lighter;
+            font-size: 5em; 
+            margin-bottom: 15px;
+        }
+
+        div.icons {
+            padding: 35px 0;
+        }
+
+     }
+
+    /* // Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) { 
+        padding: 0 200px;
+
+        div.icons {
+            padding: 50px 0;
+        }
+     }    
 `;
 
 export const StyledLink = styled(Link)`
@@ -148,29 +189,28 @@ export const BounceArrow = styled(Link)`
 `;
 
 export const TechsSection = styled.section`
-    height: 95vh;
+    height: 100vh;
     max-width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     flex-flow: row wrap;
+    background-image: url(${oceanImg});
+    color: #FFF;
 
     div.main {
-        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         align-content: center;
-        flex: 1 1 50%;
+        flex: 1 1 60%;
     }
 
     div.title {
+        height: 20%;
         min-width: 250px;
-        background-image: url(${oceanImg});
-        color: #FFF;
-        color: #FFFFFF;
         text-shadow: 8px 8px 4px #474747;
     }
 
@@ -186,8 +226,8 @@ export const TechsSection = styled.section`
     }
 
     div.icons img {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         margin-right: 25px;
     }
 
@@ -195,15 +235,26 @@ export const TechsSection = styled.section`
         animation: 2s ${bounceAnimation};
     }
 
-    @media (max-width: 504px){
-        height: 100vh;
+    @media (min-width: 576px) { 
+        height: 40vh
+    }
+
+    @media (min-width: 768px) { 
+        height: 30vh;
 
         div.main {
-            height: 80%
+            height: 100%;
+            flex: 1 1 50%;
         }
 
         div.title {
-            height: 20%;
+            height: 100%;
+            font-size: 2em;
+            font-weight: lighter;
         }
-    }
+     }
+
+    @media (min-width: 992px) {  }
+
+    @media (min-width: 1200px) {  }
 `;
