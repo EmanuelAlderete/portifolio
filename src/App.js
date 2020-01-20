@@ -1,8 +1,6 @@
 import React from 'react';
 import { HomeSection, ResetCSS, FundationsSection, BounceArrow, StyledLink } from './styles';
 
-
-
 import cloudImg from './images/cloud.svg';
 import fastImg from './images/fast.svg';
 import graphImg from './images/graph.svg';
